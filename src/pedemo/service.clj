@@ -10,9 +10,10 @@
 
 (defn home-page
   [request]
-  (ring-resp/content-type
+  (-> 
    (ring-resp/response "<h1>Demo</h1>")
-   "text/html;charset=UTF-8"))
+   (ring-resp/content-type
+    "text/html;charset=UTF-8")))
 
 ;; Defines "/" and "/about" routes with their associated :get handlers.
 ;; The interceptors defined after the verb map (e.g., {:get home-page}

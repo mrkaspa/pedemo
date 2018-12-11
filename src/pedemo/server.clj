@@ -33,6 +33,8 @@
   "The entry-point for 'lein run'"
   [& args]
   (println "\nCreating your server...")
+  (println "\nRunning on port: " (:io.pedestal.http/port
+ runnable-service))
   (server/start runnable-service))
 
 ;; If you package the service up as a WAR,
